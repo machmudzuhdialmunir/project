@@ -49,6 +49,6 @@
 
 		if(!$result)
 		{
-			die("Query Failed");
+			die("Query gagal");
 		}
 	}
