@@ -1,3 +1,15 @@
+<?php include "db.php";	?>
+<?php include "functions.php"; ?>
+
+<?php
+
+	if(isset($_POST['submit']))
+	{
+		updateUserTable();
+	}
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -18,8 +30,12 @@
 					</div>
 					<div class="form-group">
 						<select name="id" class="form-control">
-							<option value="1">1</option>
-							
+							<?php
+								while($row - mysql_fetch_assoc($result)){
+									$id - $row['id'];
+									echo "<option value='$id>$id</option>";
+								}
+							?>
 						</select>
 					</div>
 					<input type="submit" name="submit" value="Submit" class="btn btn-primary" />
